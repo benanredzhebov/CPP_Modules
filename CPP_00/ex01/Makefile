@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+         #
+#    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 20:43:46 by benanredzhe       #+#    #+#              #
-#    Updated: 2024/09/02 20:56:57 by benanredzhe      ###   ########.fr        #
+#    Updated: 2024/09/05 17:52:02 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 	= phonebook
 
 SRC_DIR = src
-SRCS 	= $(wildcard *.cpp)
+SRCS 	= $(wildcard $(SRC_DIR)/*.cpp)
 
-SRC 	= $(addprefix $(SRC_DIR)/, $(SRCS))
-OBJ		= $(patsubst %.cpp, %.o, $(SRCS)
+#SRC 	= $(addprefix $(SRC_DIR)/, $(SRCS))
+OBJ		= $(patsubst %.cpp, %.o, $(notdir $(SRCS)))
 
 CC 		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -37,4 +37,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY all clean fclean re
+.PHONY: all clean fclean re
