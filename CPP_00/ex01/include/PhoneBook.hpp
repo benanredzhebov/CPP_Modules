@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 21:26:39 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/09/03 16:41:11 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/05 17:07:32 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 class PhoneBook
 {
 private:
-	Contact contacts[8];
-	std::string userInput;
-	int		entry;
-	void	putContact(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds);
-	void	replaceOldestContact();
-	bool	displayExtract(void);
-	bool	displayData(std::string user_input);
+	Contact		contacts[8];
+	std::string	_userInput;
+	int			_entry;
+	void		_putContact(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds);
+	void		_replaceOldestContact();
+	bool		_displayExtract(void);
+	bool		_displayData(std::string user_input);
 
 public:
 	PhoneBook(void);
