@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:56:09 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/05 17:45:15 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/06 12:11:05 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ PhoneBook::~PhoneBook(void)
 
 int		PhoneBook::getInfo(void)
 {
-	int i = 0, j;
-	std::string info[5];
+	int	i = 0;
+	int	j;
+	std::string	info[5];
 
 	while (i < 5)
 	{
@@ -65,6 +66,9 @@ int		PhoneBook::getInfo(void)
 	return (1);
 }
 
+/*function is responsible for storing a new contact in the phone book.
+It manages adding contacts, and if the phone book is full, it replaces
+the oldest contact with the new one. Let's go through it step by step*/
 void	PhoneBook::_putContact(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds)
 {
 	if (this->_entry < 7)
@@ -89,6 +93,10 @@ void	PhoneBook::_replaceOldestContact(void)
 	}
 }
 
+/*function allows the user to search for a contact by displaying a
+list of contacts (in a summary format), then prompting the user to
+select a contact by entering its index. If the index is valid, it
+displays the detailed contact information.*/
 int		PhoneBook::searchEntries(void)
 {
 	if (_displayExtract())
@@ -122,6 +130,10 @@ int		PhoneBook::searchEntries(void)
 	return (1);
 }
 
+/*function is responsible for displaying a summary
+of all contacts in the phonebook. If there are no contacts
+in the phonebook, it displays a message informing the user that no
+entries are available.*/
 bool	PhoneBook::_displayExtract(void)
 {
 	if (this->_entry >= 0)
@@ -137,6 +149,15 @@ bool	PhoneBook::_displayExtract(void)
 	return (false);
 }
 
+/*The function checks if the user’s input is a single
+character representing a valid contact index.
+It converts the input to an integer and verifies whether
+the index is valid (i.e., within the range of existing
+contacts).
+If the index is valid, it displays the detailed information
+for the contact using putEntry().
+If the input is invalid or out of range, the function
+prints an error message and returns false.*/
 bool	PhoneBook::_displayData(std::string _user_input)
 {
 	int userIndex = -5;
@@ -151,7 +172,7 @@ bool	PhoneBook::_displayData(std::string _user_input)
 		userIndex = int(_user_input[0]) - 48;
 	index = userIndex - 1;
 	if (index >= 0 && index <= this->_entry)
-	    contacts[index].putEntry();
+		contacts[index].putEntry();
 	else
 	{
 		std::cout << "No entry found! Write an existing index." << std::endl;

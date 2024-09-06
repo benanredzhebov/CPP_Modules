@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 21:25:50 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/09/03 16:44:31 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/06 09:52:47 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	PhoneBook phonebook;
-	std::string command; /*Declares a string variable to store user commands*/
+	std::string command; /*A string variable command is declared to hold user inputs*/
 
 	phonebook.showInstruction();
 	while (true)
