@@ -1,0 +1,31 @@
+Replacing the oldest contact...
+Before replacement - Contact0: 0
+Contact 0 details: Index: 0, First Name: 1, Last Name: 1, Nickname: 1, Phone Number: 1, Darkest Secret: 1
+After replacement - Contact 0: 0
+Contact 0 details: Index: 0, First Name: 2, Last Name: 2, Nickname: 2, Phone Number: 2, Darkest Secret: 2
+Before replacement - Contact1: 1
+Contact 1 details: Index: 1, First Name: 2, Last Name: 2, Nickname: 2, Phone Number: 2, Darkest Secret: 2
+After replacement - Contact 1: 1
+Contact 1 details: Index: 1, First Name: 3, Last Name: 3, Nickname: 3, Phone Number: 3, Darkest Secret: 3
+Before replacement - Contact2: 2
+Contact 2 details: Index: 2, First Name: 3, Last Name: 3, Nickname: 3, Phone Number: 3, Darkest Secret: 3
+After replacement - Contact 2: 2
+Contact 2 details: Index: 2, First Name: 4, Last Name: 14, Nickname: 4, Phone Number: 4, Darkest Secret: 4
+Before replacement - Contact3: 3
+Contact 3 details: Index: 3, First Name: 4, Last Name: 14, Nickname: 4, Phone Number: 4, Darkest Secret: 4
+After replacement - Contact 3: 3
+Contact 3 details: Index: 3, First Name: 5, Last Name: 5, Nickname: 5, Phone Number: 5, Darkest Secret: 5
+Before replacement - Contact4: 4
+Contact 4 details: Index: 4, First Name: 5, Last Name: 5, Nickname: 5, Phone Number: 5, Darkest Secret: 5
+After replacement - Contact 4: 4
+Contact 4 details: Index: 4, First Name: 6, Last Name: 6, Nickname: 6, Phone Number: 6, Darkest Secret: 6
+Before replacement - Contact5: 5
+Contact 5 details: Index: 5, First Name: 6, Last Name: 6, Nickname: 6, Phone Number: 6, Darkest Secret: 6
+After replacement - Contact 5: 5
+Contact 5 details: Index: 5, First Name: 7, Last Name: 7, Nickname: 7, Phone Number: 7, Darkest Secret: 7
+Before replacement - Contact6: 6
+Contact 6 details: Index: 6, First Name: 7, Last Name: 7, Nickname: 7, Phone Number: 7, Darkest Secret: 7
+After replacement - Contact 6: 6
+Contact 6 details: Index: 6, First Name: 8, Last Name: 8, Nickname: 8, Phone Number: 8, Darkest Secret: 8
+Oldest contact replaced.
+Contact saved

@@ -6,16 +6,16 @@
 #    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 20:43:46 by benanredzhe       #+#    #+#              #
-#    Updated: 2024/09/05 17:52:02 by beredzhe         ###   ########.fr        #
+#    Updated: 2024/09/08 11:08:09 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME 	= phonebook
 
 SRC_DIR = src
-SRCS 	= $(wildcard $(SRC_DIR)/*.cpp)
+SRCS 	= $(shell find $(SRC_DIR) -name '*.cpp')
 
-#SRC 	= $(addprefix $(SRC_DIR)/, $(SRCS))
+SRC 	= $(addprefix $(SRC_DIR)/, $(SRCS))
 OBJ		= $(patsubst %.cpp, %.o, $(notdir $(SRCS)))
 
 CC 		= c++

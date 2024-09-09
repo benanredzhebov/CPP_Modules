@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:56:09 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/06 12:11:05 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/09 15:07:13 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ PhoneBook::~PhoneBook(void)
 
 int		PhoneBook::getInfo(void)
 {
-	int	i = 0;
-	int	j;
-	std::string	info[5];
+	int	i = 0; // iterate through input fields
+	int	j; // iterate through characters in the phone number
+	std::string	info[5]; //store user input
 
 	while (i < 5)
 	{
@@ -47,7 +47,7 @@ int		PhoneBook::getInfo(void)
 			j++;
 		if (i == 3 && info[i] != "" && j != (int)info[i].length())
 		{
-			std::cout << "Number must contain only digits" << std::endl;
+			std::cout << "Phone number must contain only digits" << std::endl;
 			info[i] = "";
 		}
 		if (info[i] == "" && std::cin.eof() == false)
@@ -68,7 +68,7 @@ int		PhoneBook::getInfo(void)
 
 /*function is responsible for storing a new contact in the phone book.
 It manages adding contacts, and if the phone book is full, it replaces
-the oldest contact with the new one. Let's go through it step by step*/
+the oldest contact with the new one.*/
 void	PhoneBook::_putContact(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds)
 {
 	if (this->_entry < 7)
@@ -86,11 +86,18 @@ void	PhoneBook::_putContact(std::string fn, std::string ln, std::string nn, std:
 
 void	PhoneBook::_replaceOldestContact(void)
 {
+	std::cout << "Replacing the oldest contact..." << std::endl;
 	for (int i = 0; i < 7; i++)
 	{
+		std::cout << "Before replacement - Contact" << i << ": " << contacts[i].index << std::endl;
+		std::cout << "Contact " << i << " details: " << contacts[i].getDetails() << std::endl;
 		this->contacts[i] = this->contacts[i + 1];
-		this->contacts[i].index = this->contacts[i + 1].index - 1;
+		// this->contacts[i].index = this->contacts[i + 1].index - 1;
+		this->contacts[i].index = i;
+		std::cout << "After replacement - Contact " << i << ": " << contacts[i].index << std::endl;
+		std::cout << "Contact " << i << " details: " << contacts[i].getDetails() << std::endl;
 	}
+	std::cout << "Oldest contact replaced." << std::endl;
 }
 
 /*function allows the user to search for a contact by displaying a

@@ -6,11 +6,12 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 21:19:50 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/09/06 12:36:16 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/09 15:04:08 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Contact.hpp"
+#include <sstream>
 
 Contact::Contact(void)
 {
@@ -32,6 +33,19 @@ void Contact::addEntry(int entry, std::string fn, std::string ln, std::string nn
 	this->_nickName = nn;
 	this->_phoneNumber = pn;
 	this->_darkestSecret = ds;
+}
+
+// Method to get the details of the contact as a string
+std::string Contact::getDetails() const
+{
+    std::ostringstream details;
+    details << "Index: " << index << ", "
+            << "First Name: " << _firstName << ", "
+            << "Last Name: " << _lastName << ", "
+            << "Nickname: " << _nickName << ", "
+            << "Phone Number: " << _phoneNumber << ", "
+            << "Darkest Secret: " << _darkestSecret;
+    return details.str();
 }
 
 /* Function is responsible for displaying a summary of a Contact object’s

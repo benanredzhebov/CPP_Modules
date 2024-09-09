@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+         #
+#    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 18:58:05 by benanredzhe       #+#    #+#              #
-#    Updated: 2024/09/02 20:54:06 by benanredzhe      ###   ########.fr        #
+#    Updated: 2024/09/08 10:28:57 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= megaphone
 
-SRC		= $(wildcard *.cpp)
+SRC		= $(shell find -name '*.cpp')
 OBJ		= $(SRC:.cpp=.o)
 
 CC		= c++
