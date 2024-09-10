@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:56:09 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/09 15:07:13 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:16:51 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 PhoneBook::PhoneBook(void)
 {
 	this->_entry = -1;
+	this->oldest = 0;
 	return;
 }
 
@@ -23,11 +24,11 @@ PhoneBook::~PhoneBook(void)
 	return;
 }
 
-int		PhoneBook::getInfo(void)
+int PhoneBook::getInfo(void)
 {
-	int	i = 0; // iterate through input fields
-	int	j; // iterate through characters in the phone number
-	std::string	info[5]; //store user input
+	int i = 0;			 // iterate through input fields
+	int j;				 // iterate through characters in the phone number
+	std::string info[5]; // store user input
 
 	while (i < 5)
 	{
@@ -51,7 +52,7 @@ int		PhoneBook::getInfo(void)
 			info[i] = "";
 		}
 		if (info[i] == "" && std::cin.eof() == false)
-			continue ;
+			continue;
 		else if (std::cin.eof() == true)
 		{
 			std::cout << "" << std::endl;
@@ -69,7 +70,7 @@ int		PhoneBook::getInfo(void)
 /*function is responsible for storing a new contact in the phone book.
 It manages adding contacts, and if the phone book is full, it replaces
 the oldest contact with the new one.*/
-void	PhoneBook::_putContact(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds)
+void PhoneBook::_putContact(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds)
 {
 	if (this->_entry < 7)
 	{
@@ -79,32 +80,32 @@ void	PhoneBook::_putContact(std::string fn, std::string ln, std::string nn, std:
 	else
 	{
 		std::cout << "Oldest Contact is replaced by the new Contact" << std::endl;
-		_replaceOldestContact();
-		contacts[_entry].addEntry(this->_entry, fn, ln, nn, pn, ds);
+		// _replaceOldestContact();
+		contacts[this->oldest].addEntry(this->oldest, fn, ln, nn, pn, ds);
+		contacts[this->oldest].index = this->oldest;
+		if (this->oldest == 7)
+			this->oldest = 0;
+		else
+			this->oldest++;
 	}
 }
 
-void	PhoneBook::_replaceOldestContact(void)
-{
-	std::cout << "Replacing the oldest contact..." << std::endl;
-	for (int i = 0; i < 7; i++)
-	{
-		std::cout << "Before replacement - Contact" << i << ": " << contacts[i].index << std::endl;
-		std::cout << "Contact " << i << " details: " << contacts[i].getDetails() << std::endl;
-		this->contacts[i] = this->contacts[i + 1];
-		// this->contacts[i].index = this->contacts[i + 1].index - 1;
-		this->contacts[i].index = i;
-		std::cout << "After replacement - Contact " << i << ": " << contacts[i].index << std::endl;
-		std::cout << "Contact " << i << " details: " << contacts[i].getDetails() << std::endl;
-	}
-	std::cout << "Oldest contact replaced." << std::endl;
-}
+
+// I imlement this inside of the _putContact.
+// void PhoneBook::_replaceOldestContact(void)
+// {
+// 	// for (int i = 0; i < 7; i++)
+// 	for (int i = 7; i > 0; --i)
+// 	{
+// 		this->contacts[i].index = i;
+// 	}
+// }
 
 /*function allows the user to search for a contact by displaying a
 list of contacts (in a summary format), then prompting the user to
 select a contact by entering its index. If the index is valid, it
 displays the detailed contact information.*/
-int		PhoneBook::searchEntries(void)
+int PhoneBook::searchEntries(void)
 {
 	if (_displayExtract())
 	{
@@ -122,7 +123,7 @@ int		PhoneBook::searchEntries(void)
 			{
 				std::cout << "" << std::endl;
 				std::cout << "Exiting phonebook... GOOD BYE" << std::endl;
-				exit (0);
+				exit(0);
 			}
 			std::cout << "Write index: ";
 			std::getline(std::cin, _userInput);
@@ -141,7 +142,7 @@ int		PhoneBook::searchEntries(void)
 of all contacts in the phonebook. If there are no contacts
 in the phonebook, it displays a message informing the user that no
 entries are available.*/
-bool	PhoneBook::_displayExtract(void)
+bool PhoneBook::_displayExtract(void)
 {
 	if (this->_entry >= 0)
 	{
@@ -165,7 +166,7 @@ If the index is valid, it displays the detailed information
 for the contact using putEntry().
 If the input is invalid or out of range, the function
 prints an error message and returns false.*/
-bool	PhoneBook::_displayData(std::string _user_input)
+bool PhoneBook::_displayData(std::string _user_input)
 {
 	int userIndex = -5;
 	int index;
@@ -188,7 +189,7 @@ bool	PhoneBook::_displayData(std::string _user_input)
 	return (true);
 }
 
-void	PhoneBook::showInstruction(void)
+void PhoneBook::showInstruction(void)
 {
 	std::cout << "Welcome!" << std::endl;
 	std::cout << "This phonebook can store up to 8 contacts!" << std::endl;

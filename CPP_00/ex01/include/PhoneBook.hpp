@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 21:26:39 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/09/08 11:30:01 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:17:07 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ class PhoneBook
 		std::string	_userInput; // A string to store user input
 		int			_entry; // tracking how many contacts have been added to the phonebook
 		void		_putContact(std::string fn, std::string ln, std::string nn, std::string pn, std::string ds);
-		void		_replaceOldestContact(); // A private method to replace the oldest contact in the phonebook
+		// void		_replaceOldestContact(); // A private method to replace the oldest contact in the phonebook
 		bool		_displayExtract(void); // A private method to displat a summary of the contacts
 		bool		_displayData(std::string user_input);
-
+		int			oldest;
+		
 	/*These members are public because they define the interface through which users of
 	the PhoneBook class can interact with it.*/
 	public:
