@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 18:57:53 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/09/10 14:51:55 by beredzhe         ###   ########.fr       */
+/*   Created: 2024/09/12 09:53:11 by beredzhe          #+#    #+#             */
+/*   Updated: 2024/09/12 12:10:41 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+
 #include <iostream>
 
-int main(int ac, char **av)
-{
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	else
-	{
-		for (int i = 1; i < ac; i++)
-		{
-			std::string str = av[i];
-			for (std::string::iterator it = str.begin(); it != str.end(); ++it)
-				std::cout << (char) std::toupper(*it);
-			std::cout << ' ';
-		}
-	}
-	std::cout << std::endl;
-	return 0;
-}
+class	Zombie {
+	private:
+		std::string	_name;
+	public:
+		Zombie ( std::string name ); //Constructor declaration
+		~Zombie ( void ); //Destructor declaration
+
+		void	announce(void);
+};
+
+#endif

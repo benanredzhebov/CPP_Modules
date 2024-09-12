@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/02 18:58:05 by benanredzhe       #+#    #+#              #
-#    Updated: 2024/09/10 14:50:21 by beredzhe         ###   ########.fr        #
+#    Created: 2024/09/12 10:12:48 by beredzhe          #+#    #+#              #
+#    Updated: 2024/09/12 12:56:41 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= megaphone
+NAME	=	zombie
 
-SRC		= $(shell find -name '*.cpp')
-OBJ		= $(SRC:.cpp=.o)
+SRC		=	$(shell find -name '*.cpp')
+OBJ		=	$(SRC:.cpp=.o)
 
-CC		= c++
-CFLAGS	= -Wall -Wextra -Werror -std=c++98
+CC		=	c++
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
@@ -30,7 +30,7 @@ clean:
 	rm -rf $(OBJ)
 
 fclean: clean
-		rm -rf $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
