@@ -6,17 +6,18 @@
 #    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 14:00:23 by beredzhe          #+#    #+#              #
-#    Updated: 2024/09/12 14:05:37 by beredzhe         ###   ########.fr        #
+#    Updated: 2024/09/13 09:49:10 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-name	=	zombie
+NAME	=	zombie
 
-SRC		=	$(shell find -name '.cpp')
+SRC		=	$(shell find -name '*.cpp')
 OBJ		=	$(SRC:.cpp=.o)
 
-CC		=	c++
+CC	=	c++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+
 
 all: $(NAME)
 

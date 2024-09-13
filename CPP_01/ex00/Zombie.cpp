@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 10:03:44 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/12 13:19:23 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/13 10:01:54 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ the zombie's presence with a characteristic phrase.*/
 Zombie::Zombie( std::string name ) : _name(name) {}
 
 Zombie::~Zombie() {
-	std::cout << this->_name << " Calling destructor: terminated " << std::endl;
+	std::cout << this->_name << " is destroyed" << std::endl;
 }
 
 void	Zombie::announce(void){
