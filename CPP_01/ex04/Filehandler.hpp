@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Filehandler.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/13 15:35:25 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/14 07:55:51 by beredzhe         ###   ########.fr       */
+/*   Created: 2024/09/14 08:20:19 by beredzhe          #+#    #+#             */
+/*   Updated: 2024/09/14 08:49:30 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#ifndef FILEHANDLER_HPP
+# define FILEHANDLER_HPP
 
-#include "./Weapon.hpp"
+#include <iostream>
+#include <fstream>
+#include <string>
 
-class HumanB {
+class Filehandler {
 	private:
-	std::string	_name;
-	Weapon* _weapon; // HumanB may or may not have a weapon, so we use a pointer
-
+		std::string	_fileName;
+		void	_replaceloop(std::ifstream &infile, std::ofstream &outfile,
+			std::string s1, std::string s2);
+	
 	public:
-	HumanB(std::string name);
-	~HumanB();
+	Filehandler(std::string fileName);
+	~Filehandler();
 
-	/* Set weapon function*/
-	void	setWeapon(Weapon& weapon);
-	void	attack() const;
+	std::string getName() const;
+	void	replace(std::string s1, std::string s2);
 };
 
 #endif
