@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 12:57:38 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/16 13:39:14 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/16 14:57:06 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,38 @@ void	Harl::error(void) {
 	std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
+/*The function first finds the index of the complaint level in the levels array.
+It then processes complaints starting from that level, calling the corresponding member functions in sequence.
+If the level is not found, it prints a default message.*/
 void	Harl::complain(std::string level) {
-	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void (Harl::*complaints[])(void) = {
+
+	void	(Harl::*complaints[]) (void) = {
 		&Harl::debug,
 		&Harl::info,
 		&Harl::warning,
-		&Harl::error
-	};
-	int	i = 0;
+		&Harl::error};
+	std::string	levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	int i = 0;
 	while (i < 4 && levels[i] != level)
 		i++;
-	switch (i) {
-		case 0: (this->*complaints[0])(); break;
-		case 1: (this->*complaints[1])(); break;
-		case 2: (this->*complaints[2])(); break;
-		case 3: (this->*complaints[3])(); break;
-		default:
-			std::cout << "[Probably complaining about insignicant problems]" << std::endl;
+	while (i < 5) {
+		switch(i) {
+			case 0:
+				(this->*complaints[i++])();
+				break;
+			case 1:
+				(this->*complaints[i++])();
+				break;
+			case 2:
+				(this->*complaints[i++])();
+				break;
+			case 3:
+				(this->*complaints[i++])();
+				break;
+			default:
+				std::cout << "[ Probably complaining about insignificant problems ]\n";
+				i++;
+		}
 	}
 }
