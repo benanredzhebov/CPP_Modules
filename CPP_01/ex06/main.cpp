@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 09:40:44 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/16 12:45:00 by beredzhe         ###   ########.fr       */
+/*   Created: 2024/09/16 13:26:17 by beredzhe          #+#    #+#             */
+/*   Updated: 2024/09/16 13:32:31 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#include "./Harl.hpp"
 
-#include <iostream>
+int	main(int ac, char **av) {
+	if (ac != 2) {
+		std::cerr << "Usage: " << av[0] << "<log level>" << std::endl;
+		return 1;
+	}
 
-class Harl {
-	private:
-		void	debug( void );
-		void	info( void );
-		void	warning( void );
-		void	error( void );
+	Harl harl;
+	harl.complain(av[1]);
 
-	public:
-		Harl();
-		~Harl();
-
-		void	complain( std::string level );
-	
-};
-
-#endif
+	return 0;
+}
