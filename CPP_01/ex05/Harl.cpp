@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 09:14:08 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/16 11:07:51 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/18 11:52:29 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	Harl::complain(std::string level) {
 
 	/*Iterate and compare the levels*/
 	for (int i = 0; i < 4; i++) {
+		std::cout << "Debug: levels[" << i << "] = " << levels[i] << ", level = " << level << std::endl;
 		if (levels[i] == level) {
 			(this->*complaints[i])();
 			return ;

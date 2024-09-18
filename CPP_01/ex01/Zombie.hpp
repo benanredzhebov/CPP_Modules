@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 14:08:01 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/13 10:23:18 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/18 08:09:02 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ class Zombie {
 		std::string	_name;
 	
 	public:
-		/* Constructor without name*/
+		/* Constructor*/
 		Zombie();
-
-		/* Constructor with a name */
-		// Zombie(std::string name);
 
 		/* Destructor */
 		~Zombie();

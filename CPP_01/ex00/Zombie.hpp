@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 09:53:11 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/12 12:10:41 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/18 08:01:13 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,8 @@ class	Zombie {
 
 		void	announce(void);
 };
+
+Zombie* newZombie(std::string name); // Returns pointer to Zombie object allocated with new.
+void	randomChump(std::string name); // Creates new Zombie stored on the heap, which announces itself.
 
 #endif
