@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/25 11:21:22 by beredzhe          #+#    #+#              #
-#    Updated: 2024/09/26 10:32:47 by beredzhe         ###   ########.fr        #
+#    Created: 2024/09/26 13:15:31 by beredzhe          #+#    #+#              #
+#    Updated: 2024/09/26 13:20:46 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC		=	$(shell find -name '*.cpp')
 OBJ		=	$(SRC:.cpp=.o)
 
 CC		=	c++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 
 all: $(NAME)
@@ -33,6 +33,6 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean all;
+re: fclean all
 
 .PHONY: all clean fclean re

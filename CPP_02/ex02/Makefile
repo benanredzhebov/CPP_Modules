@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/09/25 11:21:22 by beredzhe          #+#    #+#              #
-#    Updated: 2024/09/26 10:32:47 by beredzhe         ###   ########.fr        #
+#    Created: 2024/09/26 10:29:05 by beredzhe          #+#    #+#              #
+#    Updated: 2024/09/26 12:58:23 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,6 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean all;
+re: fclean all
 
 .PHONY: all clean fclean re
