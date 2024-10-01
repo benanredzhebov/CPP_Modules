@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:18:02 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/01 10:19:16 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:25:44 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ClapTrap::attack(const std::string& target) {
 			  << ", causing " << _attackDamage << " point of damage!" << std::endl;
 }
 
-// Take Damage
+// Take Damage(applies damage to the ClapTrap)
 void	ClapTrap::takeDamage(unsigned int amount) {
 	if (amount >= _hitPoints) {
 		_hitPoints = 0;
@@ -44,7 +44,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 	}
 }
 
-//Be repaired
+//Be repaired. If no ClapTrap no energy or hit points, it cannot repair itself
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (_hitPoints == 0 || _energyPoints == 0) {
 		std::cout << "ClapTrap " << _name << " has no energy or hit points to repair!" << std::endl;
@@ -53,4 +53,24 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	_hitPoints += amount;
 	_energyPoints--;
 	std::cout << "ClapTrap " << _name << " repairs itself, restoring " << amount << " hit points!" << std::endl;
+}
+
+void	ClapTrap::setAttackDamage(unsigned int attack_damage) {
+	this->_attackDamage = attack_damage;
+}
+
+unsigned int	ClapTrap::getAttackDamage(void) const {
+	return this->_attackDamage;
+}
+
+unsigned int	ClapTrap::getHitPoints() const {
+	return _hitPoints;
+}
+
+unsigned int	ClapTrap::getEnergyPoints() const {
+	return _energyPoints;
+}
+
+const std::string& ClapTrap::getName() const {
+	return _name;
 }
