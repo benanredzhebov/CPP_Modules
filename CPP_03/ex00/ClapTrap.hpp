@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 08:59:39 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/27 07:21:34 by beredzhe         ###   ########.fr       */
+/*   Created: 2024/10/01 09:03:31 by beredzhe          #+#    #+#             */
+/*   Updated: 2024/10/01 10:13:11 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
+#include <string>
 
-class Fixed {
+class ClapTrap {
 	private:
-		int					_fixedPointValue;
-		static const int	_fractionalBits = 8;
+		std::string		_name;
+		unsigned int	_hitPoints; // Healt of ClapTrap, starts at 10
+		unsigned int	_energyPoints;
+		unsigned int	_attackDamage; // Damage dealt in attacks, starts at 0
 
 	public:
-		Fixed();
-		Fixed(const Fixed &other); // Copy constructor
-		Fixed &operator=(const Fixed &other); // Copy assignment operator
-		~Fixed();
+		ClapTrap(const std::string& name);
+		~ClapTrap();
 
-		int		getRawBits( void ) const; // Returns the raw fixed-point value
-		void	setRawBits( int const raw ); // Sets the raw fixed-point value
+		void			attack(const std::string& target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
 };
 
 #endif

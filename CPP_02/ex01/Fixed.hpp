@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:27:54 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/09/25 11:53:07 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/09/29 09:43:27 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Fixed {
 	private:
-		int				_fixedPointValue;
+		int					_fixedPointValue;
 		static const int	_fractionalBits = 8;
 
 	public:
