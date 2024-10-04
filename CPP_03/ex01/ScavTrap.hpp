@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
+/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:55:01 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/03 17:41:45 by benanredzhe      ###   ########.fr       */
+/*   Updated: 2024/10/04 08:57:36 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 
 class ScavTrap : public ClapTrap {
 	public:
-		ScavTrap(std::string _name);
+		ScavTrap(const std::string& name);
+		ScavTrap(const ScavTrap& other);
+		ScavTrap& operator=(const ScavTrap& other);
 		~ScavTrap();
 
 		/* Member function */

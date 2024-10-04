@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
+/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:03:31 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/03 17:48:16 by benanredzhe      ###   ########.fr       */
+/*   Updated: 2024/10/04 10:54:37 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class ClapTrap {
 	private:
 		std::string			_name;
-		unsigned int		_hitPoints; // Healt of ClapTrap, starts at 10
+		unsigned int		_hitPoints; // Health of ClapTrap, starts at 10
 		unsigned int		_energyPoints;
 		unsigned int		_attackDamage; // Damage dealt in attacks, starts at 0
 
