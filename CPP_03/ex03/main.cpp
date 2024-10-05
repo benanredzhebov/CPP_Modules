@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:45:36 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/05 13:34:18 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/05 22:19:54 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ int	main(void)
 		diamond.attack("snap");
 		diamond.whoAmI();
 		std::cout << "name: " << diamond.getDiamondName() << std::endl;
-		std::cout << "Attack:" << diamond.FragTrap::getAttackDamage() << std::endl;
-		std::cout << "Hit: " << diamond.FragTrap::getHitPoints() << std::endl;
-		std::cout << "Energy: " << diamond.FragTrap::getEnergyPoints() << std::endl;
-		std::cout << "Clap name: " << diamond.FragTrap::getName() << std::endl;
+		std::cout << "Attack:" << diamond.getAttackDamage() << std::endl;
+		std::cout << "Hit: " << diamond.getHitPoints() << std::endl;
+		std::cout << "Energy: " << diamond.getEnergyPoints() << std::endl;
+		std::cout << "Clap name: " << diamond.getName() << std::endl;
 	}
 }

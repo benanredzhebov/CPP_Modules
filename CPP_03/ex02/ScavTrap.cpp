@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:30:18 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/05 10:52:28 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/05 21:38:00 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
 }
 
 /* Copy constructor.
-/* It initializes the base class part of the new ScavTrap object by copying the base class
+It initializes the base class part of the new ScavTrap object by copying the base class
 part of the other object. */
 ScavTrap::ScavTrap (ScavTrap const &scav) : ClapTrap(scav) {
 	*this = scav;  // This invokes the assignment operator!

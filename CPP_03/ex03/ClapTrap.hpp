@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:03:31 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/05 13:36:26 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/05 23:36:32 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,12 @@ class ClapTrap {
 		int			_attackDamage; // Damage dealt in attacks, starts at 0
 
 	public:
+		ClapTrap();
 		ClapTrap(const std::string& name);
 		ClapTrap(const ClapTrap& other);
-		ClapTrap& operator=(const ClapTrap& other);
 		~ClapTrap();
 
+		ClapTrap& operator=(const ClapTrap& other);
 		void				attack(const std::string& target);
 		void				takeDamage(unsigned int amount);
 		void				beRepaired(unsigned int amount);
@@ -36,11 +37,8 @@ class ClapTrap {
 		//Getter methods to access private members
 		unsigned int		getHitPoints() const;
 		unsigned int		getEnergyPoints() const;
-		unsigned int		getHitPoints() const;
-		const std::string&	getName() const;
 		unsigned int		getAttackDamage(void) const;
-		void				setAttackDamage(unsigned int attack_damage);
-		
+		const std::string&	getName() const;
 };
 
 #endif

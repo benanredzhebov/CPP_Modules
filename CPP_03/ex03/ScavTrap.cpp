@@ -3,14 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:30:18 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/05 10:52:28 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/05 23:55:23 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap() : ClapTrap () {
+
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
+	std::cout << "Scav constructor called" << std::endl;
+}
 
 /* Constructor for ScavTrap, which is derived from the ClapTrap */
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
@@ -21,7 +29,7 @@ ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
 }
 
 /* Copy constructor.
-/* It initializes the base class part of the new ScavTrap object by copying the base class
+It initializes the base class part of the new ScavTrap object by copying the base class
 part of the other object. */
 ScavTrap::ScavTrap (ScavTrap const &scav) : ClapTrap(scav) {
 	*this = scav;  // This invokes the assignment operator!
@@ -34,10 +42,10 @@ ScavTrap::~ScavTrap() {
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& scav) {
 	if (this != &scav) {
-		this->_name = scav._name;
-		this->_hitPoints = scav._hitPoints;
-		this->_energyPoints = scav._energyPoints;
-		this->_attackDamage = scav._attackDamage;
+		this->_name = scav.getName();
+		this->_hitPoints = scav.getHitPoints();
+		this->_energyPoints = scav.getEnergyPoints();
+		this->_attackDamage = scav.getAttackDamage();
 	}
 	return *this;
 }
