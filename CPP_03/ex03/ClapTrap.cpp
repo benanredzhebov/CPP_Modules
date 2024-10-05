@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:18:02 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/05 10:47:46 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/05 12:03:27 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,14 @@ unsigned int	ClapTrap::getEnergyPoints(void) const{
 	return this->_energyPoints;
 }
 
-/*silinecek*/
 unsigned int	ClapTrap::getHitPoints(void) const {
 	return this->_hitPoints;
+}
+
+const std::string& ClapTrap::getName() const {
+	return this->_name;
+}
+
+unsigned int	ClapTrap::getAttackDamage(void) const {
+	return this->_attackDamage;
 }

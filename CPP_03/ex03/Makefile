@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/10/01 08:54:27 by beredzhe          #+#    #+#              #
-#    Updated: 2024/10/05 10:56:25 by beredzhe         ###   ########.fr        #
+#    Created: 2024/10/05 10:56:42 by beredzhe          #+#    #+#              #
+#    Updated: 2024/10/05 12:42:11 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	scavtrap
+NAME	=	diamondtrap
 
 SRC		=	$(shell find . -name '*.cpp')
 OBJ		=	$(SRC:.cpp=.o)

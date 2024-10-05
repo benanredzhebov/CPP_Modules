@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:03:31 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/05 09:38:39 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/05 13:36:26 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ class ClapTrap {
 		void				beRepaired(unsigned int amount);
 
 		//Getter methods to access private members
-		// unsigned int		getHitPoints() const;
+		unsigned int		getHitPoints() const;
 		unsigned int		getEnergyPoints() const;
 		unsigned int		getHitPoints() const;
-		// const std::string&	getName() const;
-		// unsigned int		getAttackDamage(void) const;
-		// void				setAttackDamage(unsigned int attack_damage);
+		const std::string&	getName() const;
+		unsigned int		getAttackDamage(void) const;
+		void				setAttackDamage(unsigned int attack_damage);
 		
 };
 

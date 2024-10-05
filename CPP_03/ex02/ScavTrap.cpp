@@ -6,11 +6,11 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:30:18 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/05 11:12:07 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/05 10:52:28 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./ScavTrap.hpp"
+#include "ScavTrap.hpp"
 
 /* Constructor for ScavTrap, which is derived from the ClapTrap */
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
