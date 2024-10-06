@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 16:55:01 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/05 10:07:47 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/06 22:00:50 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 /* declares new class that inherits from ClapTrap*/
 class ScavTrap : public ClapTrap {
 	public:
+		ScavTrap();
 		ScavTrap(const std::string& name);
 		ScavTrap(const ScavTrap& other);
 		ScavTrap& operator=(const ScavTrap& other);

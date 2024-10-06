@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:18:02 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/05 12:03:27 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/06 22:22:43 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+	std::cout << "ClapTrap " << _name << " has been created with default constructor!" << std::endl;
+}
 
 // Constructor
 ClapTrap::ClapTrap(const std::string& name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {

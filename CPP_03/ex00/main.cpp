@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:45:36 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/04 10:49:31 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/06 21:51:29 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(void)
 	robot.setAttackDamage(1);
 
 	// Robot attacks human until it runs out of energy points
-	for (int i = 0; i < 11; i++) {
+	for (int i = 0; i <= 10; i++) {
 		if (robot.getEnergyPoints() > 0)
 			robot.attack("human");
 		else {

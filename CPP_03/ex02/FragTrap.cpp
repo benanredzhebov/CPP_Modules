@@ -3,22 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:11:57 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/05 11:29:15 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/06 22:30:15 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./FragTrap.hpp"
 
+FragTrap::FragTrap() : ClapTrap() {
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
+	std::cout << "FragTrap " << this->_name << " has been created!" << std::endl;
+}
+
 FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
-	std::cout << "FragTrap " << this->_name << " has been constructed!" << std::endl;
+	std::cout << "FragTrap " << this->_name << " has been created!" << std::endl;
 }
-
 
 FragTrap::FragTrap(const FragTrap& other) : ClapTrap(other) {
 	*this = other;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:03:22 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/05 11:11:23 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/06 22:24:55 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class FragTrap : public ClapTrap {
 	public:
+		FragTrap();
 		FragTrap(const std::string& name);
 		FragTrap(const FragTrap& other);
 		FragTrap& operator=(const FragTrap& other);

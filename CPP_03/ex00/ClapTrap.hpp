@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:03:31 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/04 10:54:37 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/06 21:40:54 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class ClapTrap {
 		unsigned int		_attackDamage; // Damage dealt in attacks, starts at 0
 
 	public:
+		ClapTrap();
 		ClapTrap(const std::string& name);
 		~ClapTrap();
 

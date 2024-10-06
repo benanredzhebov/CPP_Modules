@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:45:36 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/05 12:12:02 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/06 22:30:51 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	main(void)
 	
 	FragTrap frog("frog");
 	frog.highFivesGuys();
-	std::cout << "name: " << frog.getName() << std::endl;
+	std::cout << "Name: " << frog.getName() << std::endl;
 	std::cout << "Frag attack damage: " << frog.getAttackDamage() << std::endl;
 	frog.attack("robot");
 	frog.getAttackDamage();
