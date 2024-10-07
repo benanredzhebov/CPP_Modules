@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
+/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:03:31 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/06 22:02:45 by benanredzhe      ###   ########.fr       */
+/*   Updated: 2024/10/07 14:36:33 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string>
 
+/* allows the ClapTrap class to encapsulate its internal state
+while still providing access to derived classes.*/
 class ClapTrap {
 	protected:
 		std::string	_name;

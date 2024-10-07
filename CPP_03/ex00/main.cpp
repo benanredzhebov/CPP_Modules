@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
+/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 09:45:36 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/06 21:51:29 by benanredzhe      ###   ########.fr       */
+/*   Updated: 2024/10/07 14:30:36 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 	ClapTrap	human("human");
 
 	// Set robot's attack damage to 2
-	robot.setAttackDamage(1);
+	robot.setAttackDamage(10);
 
 	// Robot attacks human until it runs out of energy points
 	for (int i = 0; i <= 10; i++) {
