@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
+/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 17:30:18 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/06 22:03:36 by benanredzhe      ###   ########.fr       */
+/*   Updated: 2024/10/07 15:52:51 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
