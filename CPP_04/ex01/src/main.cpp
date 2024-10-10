@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:18:50 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/09 11:41:45 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/10 11:11:57 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,72 +16,85 @@
 #include "../inc/WrongAnimal.hpp"
 #include "../inc/WrongCat.hpp"
 
-int main() {
-const Animal* meta = new Animal(); //meta is a pointer to an Animal object
-const Animal* j = new Dog(); // j is a pointer to a Dog, but it is declared as a pointer to Animal(polymorphism)
-const Animal* i = new Cat(); // i is a pointer to a Cat, but it is declared as a pointer to Animal(polymorphism)
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound();
-j->makeSound();
-meta->makeSound();
+#include <iostream>
+#include <string>
 
-/* Testing WrongAnimal and WrongCat*/
-const WrongAnimal* wrong = new WrongAnimal();
-const WrongAnimal* wrongCat = new WrongCat();
+// Test polymorphism and dynamic memory management.
 
-wrongCat->makeSound();
+void testAnimalArray() {
+	Animal *animals[4];
+	animals[0] = new Cat();
+	animals[1] = new Dog();
+	animals[2] = new Cat();
+	animals[3] = new Dog();
 
-delete meta;
-delete j;
-delete i;
-delete wrong;
-delete wrongCat;
+	for (int i = 0; i < 4; i++)
+		animals[i]->makeSound(); //The makeSound method is called on each Animal pointer. Due to polymorphism, the correct makeSound method for Cat or Dog is called.
 
-return 0;
+	for (int i = 0; i < 4; i++)
+		delete animals[i];
 }
 
+// Test the Cat class's ability to manage ideas and verify deep copying.
 
-/*If makeSound() were not declared as virtual in Animal.hpp.
-hen, calling i->makeSound() or j->makeSound() would always call Animal's makeSound() method,
-which outputs "Unknown animal sound!", regardless of whether i points to a Cat or Dog*/
+void testCatBrain() {
+	Cat cat;
+	cat.setIdeas(34, "loud");
+	std::cout << "34: " << cat.getIdeas(34) << std::endl;
 
-// int main()
-// {
-// 	std::string partition(50, '-');
+	//Set multiple ideas in a loop
+	for (int i = 0; i < 50; i++)
+		cat.setIdeas(i, "no clue");
 
-// 	std::cout << partition << std::endl;
-// 	std::cout << "ANIMAL\n";
-// 	std::cout << partition << std::endl;
+	Cat bluecat(cat);  // Copy constructor
 
-// 	{
-// 		const Animal* meta = new Animal();
-// 		const Animal* dog = new Dog();
-// 		const Animal* cat = new Cat();
-// 		std::cout << dog->getType() << " " << std::endl;
-// 		std::cout << cat->getType() << " " << std::endl; 
-// 		dog->makeSound(); //will output the dog sound!
-// 		cat->makeSound();
-// 		meta->makeSound();
-// 		delete meta;
-// 		delete dog;
-// 		delete cat;
-// 	}
+	//Print all ideas from the copied object to verify deep copying.
+	for (int i = 0; i < 100; i++)
+		std::cout << i << ": "<< bluecat.getIdeas(i) << std::endl;
 
-// 	std::cout << partition << std::endl;
-// 	std::cout << "WRONGANIMAL\n";
-// 	std::cout << partition << std::endl;
+	bluecat.setIdeas(6, "newthings");
+	std::cout << "Bluecat: " << 6 << ": " << bluecat.getIdeas(6) << std::endl;
+	std::cout << "Cat: " << 6 << ": " << cat.getIdeas(6) << std::endl;
+}
 
-// 	{
-// 		const WrongAnimal* meta = new WrongAnimal();
-// 		const WrongAnimal* cat = new WrongCat();
-// 		std::cout << cat->getType() << " " << std::endl; 
-// 		cat->makeSound();
-// 		meta->makeSound();
-// 		delete meta;
-// 		delete cat;
-// 	}
+// Test the Dog class's ability to manage ideas and verify deep copying.
 
-// 	return 0;
+void testDogBrain() {
+	Dog dog;
+	dog.setIdeas(69, "eat.sleep.repeat");
+	std::cout << "69: " << dog.getIdeas(69) << std::endl;
 
-// }
+	for (int i = 0; i < 50; i++)
+		dog.setIdeas(i, "no brainer");
+
+	Dog dawg(dog);  // Copy constructor
+
+	for (int i = 0; i < 100; i++)
+		std::cout << i << ": " << dawg.getIdeas(i) << std::endl;
+
+	dawg.setIdeas(6, "run");
+	std::cout << "Dawg: " << 6 << ": " << dawg.getIdeas(6) << std::endl;
+	std::cout << "Dog: " << 66 << ": " << dog.getIdeas(6) << std::endl;
+
+	dog.setIdeas(101, "ad");
+	dog.getIdeas(101);  // Assuming this does something meaningful
+}
+
+int main() {
+	std::string partition(50, '-');
+
+	std::cout << partition << std::endl;
+	std::cout << "ANIMAL ARRAY\n";
+	std::cout << partition << std::endl;
+	testAnimalArray();  // Call function to test the animal array
+
+	std::cout << partition << std::endl;
+	std::cout << "CAT BRAIN\n";
+	std::cout << partition << std::endl;
+	testCatBrain();  // Call function to test the cat brain
+
+	std::cout << partition << std::endl;
+	std::cout << "DOG BRAIN\n";
+	std::cout << partition << std::endl;
+	testDogBrain();  // Call function to test the dog brain
+}

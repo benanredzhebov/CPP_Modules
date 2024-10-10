@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 09:12:10 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/10 09:55:39 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:05:09 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "./Animal.hpp"
 #include "./Brain.hpp"
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 	private:
 	Brain* _brain;
 	

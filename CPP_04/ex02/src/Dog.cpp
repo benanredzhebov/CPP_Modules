@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:36:22 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/10 09:56:58 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/10 12:08:16 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Dog::Dog() : _brain(new Brain()) {
 	std::cout << "Dog constructor called!" << std::endl;
 }
 
-Dog::Dog(const Dog &other) : Animal(other) {
+Dog::Dog(const Dog &other) : AAnimal(other) {
 	this->_brain = new Brain(*other._brain);
 	std::cout << "Dog copy constructor called" << std::endl;
 }
@@ -30,7 +30,7 @@ Dog::~Dog() {
 Dog &Dog::operator=(const Dog &other) {
 	std::cout << "Dog assignment operator called" << std::endl;
 	if (this != &other) {
-		Animal::operator=(other); //calls the assignment operator of the base class (Animal), ensuring that the base class portion of the object is correctly assigned.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+		AAnimal::operator=(other); //calls the assignment operator of the base class (AAnimal), ensuring that the base class portion of the object is correctly assigned.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 		this->_brain = new Brain(*other._brain);
 	}
 	return *this;

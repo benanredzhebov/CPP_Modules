@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:33:41 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/09 10:26:06 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/10 09:56:38 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,21 @@
 #define DOG_HPP
 
 #include "./Animal.hpp"
+#include "./Brain.hpp"
 
 class Dog : public Animal {
-    public:
-    Dog();
-    Dog(const Dog &other);
-    ~Dog();
-    
-    Dog     &operator=(const Dog &other);   
-    void    makeSound() const;
+	private:
+	Brain* _brain;
+	
+	public:
+	Dog();
+	Dog(const Dog &other);
+	~Dog();
+	
+	Dog		&operator=(const Dog &other);   
+	void	makeSound() const;
+	void		setIdeas(int index, std::string idea);
+	std::string	getIdeas(int index);
 };
 
 #endif

@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 09:12:10 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/10 09:55:39 by beredzhe         ###   ########.fr       */
+/*   Created: 2024/10/09 09:23:14 by beredzhe          #+#    #+#             */
+/*   Updated: 2024/10/09 10:30:51 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-#include "./Animal.hpp"
-#include "./Brain.hpp"
+#include <iostream>
 
-class Cat : public Animal {
-	private:
-	Brain* _brain;
-	
-	public:
-	Cat();
-	Cat(const Cat &other);
-	virtual ~Cat();
-	
-	Cat		&operator=(const Cat &other);
-	void	makeSound() const;
-	void		setIdeas(int index, std::string idea);
-	std::string	getIdeas(int index);
+class WrongAnimal {
+    protected:
+    std::string _type;
+    
+    public:
+    WrongAnimal();
+    WrongAnimal(std::string type);
+    WrongAnimal(const WrongAnimal &other);
+    virtual ~WrongAnimal();
+
+    WrongAnimal    &operator=(const WrongAnimal &other);
+    void           makeSound() const;
+    std::string    getType() const;
 };
 
 #endif
