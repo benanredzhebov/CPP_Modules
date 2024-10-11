@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:36:22 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/09 10:46:02 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/11 09:25:15 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@ Dog::Dog() {
     std::cout << "Dog constructor called!" << std::endl;
 }
 
+/*It initilizes the base class part of the Dog object by
+calling the copy constructor of the Animal class. This
+ensures that all the base class members are properly
+copietd from the other object */
 Dog::Dog(const Dog &other) : Animal(other) {
-    *this = other;
+    *this = other; // all the members of the Dog class including those inherited from Animal class are copied correctly.
     std::cout << "Dog copy constructor called" << std::endl;
 }
 
