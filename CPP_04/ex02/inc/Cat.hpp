@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 09:12:10 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/10 12:05:09 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/12 10:20:33 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ class Cat : public AAnimal {
 	Cat(const Cat &other);
 	virtual ~Cat();
 	
-	Cat		&operator=(const Cat &other);
-	void	makeSound() const;
+	Cat			&operator=(const Cat &other);
+	void		makeSound() const;
 	void		setIdeas(int index, std::string idea);
 	std::string	getIdeas(int index);
 };

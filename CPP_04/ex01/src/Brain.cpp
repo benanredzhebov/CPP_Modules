@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 08:54:09 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/10 10:19:58 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:47:00 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ Brain::Brain() {
 }
 
 Brain::Brain(const Brain &other) {
-	*this = other;
 	std::cout << "Brain copy constructor called" << std::endl;
+	*this = other;
 }
 
 Brain::~Brain() {

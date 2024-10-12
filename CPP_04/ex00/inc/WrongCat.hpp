@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 09:21:56 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/09 10:38:31 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/12 08:27:47 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include "./WrongAnimal.hpp"
 
 class WrongCat : public WrongAnimal {
-    public:
-    WrongCat();
-    WrongCat(std::string type);
-    WrongCat(const WrongCat &other);
-    ~WrongCat();
+	public:
+	WrongCat();
+	WrongCat(std::string type);
+	WrongCat(const WrongCat &other);
+	virtual ~WrongCat();
 
-    WrongCat    &operator=(const WrongCat &other);
-    void        makeSound() const;
+	WrongCat	&operator=(const WrongCat &other);
+	void		makeSound() const;
 };
 
 #endif

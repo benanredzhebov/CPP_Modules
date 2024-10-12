@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:18:50 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/10 11:11:57 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/12 10:05:49 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,11 +73,11 @@ void testDogBrain() {
 		std::cout << i << ": " << dawg.getIdeas(i) << std::endl;
 
 	dawg.setIdeas(6, "run");
-	std::cout << "Dawg: " << 6 << ": " << dawg.getIdeas(6) << std::endl;
-	std::cout << "Dog: " << 66 << ": " << dog.getIdeas(6) << std::endl;
+	std::cout << "Dawg: " << 6 << ": " << dawg.getIdeas(6) << std::endl; // Since the dog object's brain was not modified at index 6 after the copy, it still holds "no brainer".
+	std::cout << "Dog: " << 6 << ": " << dog.getIdeas(6) << std::endl;
 
 	dog.setIdeas(101, "ad");
-	dog.getIdeas(101);  // Assuming this does something meaningful
+	dog.getIdeas(101);
 }
 
 int main() {

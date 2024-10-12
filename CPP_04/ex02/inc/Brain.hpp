@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 11:44:55 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/10 09:53:29 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/12 10:19:55 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define BRAIN_HPP
 
 #include <iostream>
-// #include "./Animal.hpp"
 
 class Brain {
 	private:
