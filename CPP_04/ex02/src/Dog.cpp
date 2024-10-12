@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:36:22 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/12 10:30:30 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/12 13:33:10 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Dog &Dog::operator=(const Dog &other) {
 	std::cout << "Dog assignment operator called" << std::endl;
 	if (this != &other) {
 		AAnimal::operator=(other); //calls the assignment operator of the base class (AAnimal), ensuring that the base class portion of the object is correctly assigned.
+		delete this->_brain;
 		this->_brain = new Brain(*other._brain);
 	}
 	return *this;

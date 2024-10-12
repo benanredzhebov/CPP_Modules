@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:36:22 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/12 10:10:21 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/12 13:32:20 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Dog::~Dog() {
 Dog &Dog::operator=(const Dog &other) {
 	if (this != &other) {
 		Animal::operator=(other); //calls the assignment operator of the base class (Animal), ensuring that the base class portion of the object is correctly assigned.
+		delete this->_brain;
 		this->_brain = new Brain(*other._brain); // Deep copy of the Brain object
 	}
 	return *this;

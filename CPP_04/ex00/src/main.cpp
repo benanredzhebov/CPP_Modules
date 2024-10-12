@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 17:18:50 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/12 08:32:53 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/12 11:16:26 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ const WrongAnimal* wrong = new WrongAnimal();
 const WrongAnimal* wrongCat = new WrongCat();
 
 wrongCat->makeSound();
+wrong->makeSound();
 
 delete meta;
 delete j;

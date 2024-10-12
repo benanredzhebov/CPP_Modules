@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 09:15:07 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/12 10:30:54 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/12 13:32:59 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Cat::~Cat() {
 Cat &Cat::operator=(const Cat &other) {
 	if (this != &other) {
 		AAnimal::operator=(other); //calls the assignment operator of the base class (AAnimal), ensuring that the base class portion of the object is correctly assigned.
+		delete this->_brain;
 		this->_brain = new Brain(*other._brain);
 	}
 	return *this;
