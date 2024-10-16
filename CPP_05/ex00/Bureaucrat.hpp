@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:46:06 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/15 15:22:33 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/16 12:25:50 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,34 +18,41 @@
 class Bureaucrat {
 	private:
 		const std::string	_name;
-		int _grade;
+		int					_grade;
 
 	public:
-		Bureaucrat();
-		Bureaucrat(const std::string &name, int grade);
-		Bureaucrat(const Bureaucrat &other);
+		Bureaucrat(); 									// Canonical
+		Bureaucrat(const std::string &name, int grade); // Canonical
+		Bureaucrat(const Bureaucrat &other); 			// Canonical
 		~Bureaucrat();
 		
-		Bureaucrat &operator=(const Bureaucrat &other);
+		Bureaucrat &operator=(const Bureaucrat &other); // Canonical
 
-		class GradeToHihtException : public std::exception {
+		/* Exception classes for handling invalid grades(error catching)*/
+
+		// Thrown when the grade is too high! what() Method: Returns a C-string describing the error.
+		class GradeTooHighException : public std::exception {
 			const char* what() const throw() {
-				return "Grade too high!";
-			};
+				return ": grade can not be higher than 1!\n";
+			}
+		};
 
+		// Thrown when the grade is too low!
 		class GradeTooLowException : public std::exception {
 			const char* what() const throw() {
-				return "Grade too low!";
+				return ": grade can not be lower than 150\n";
 			}
 		};
 
 		
-		std::string	getName();
-		std::string	getType();
+		const std::string	&getName() const;
+		int					getGrade() const;
 	
-		void	increment() const;
-		void	decrement() const;
+		void				incrementGrade();
+		void				decrementGrade();
 	
 };
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &b);
 
 #endif
