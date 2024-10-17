@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:46:06 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/17 09:27:25 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:03:14 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 
 // Forward declaration of Form class
-class Form;
+class AForm;
 
 class Bureaucrat {
 	private:
@@ -54,7 +54,7 @@ class Bureaucrat {
 		void				incrementGrade();
 		void				decrementGrade();
 	
-		void				signForm(Form &form) const;
+		void				signForm(AForm &form) const;
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &b);
