@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 14:24:35 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/18 10:50:58 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/20 08:40:49 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm Fo
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("ShrubberyCreationForm Form", 145, 137), _target(target) {
-	std::cout << "ShrubberyCreationForm parametrized constructor called" << std::endl;
+	std::cout << "ShrubberyCreationForm parameterized constructor called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &other) : AForm(other), _target(other._target) {
@@ -40,7 +40,6 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 std::string ShrubberyCreationForm::getTarget() const {
 	return _target;
 }
-
 
 void	ShrubberyCreationForm::executeForm() const {
 	    std::ofstream   o_file((getTarget() + "_ShrubberyCreationForm").c_str());
@@ -75,6 +74,8 @@ void	ShrubberyCreationForm::executeForm() const {
     o_file.close();
 }
 
+/* Takes a Bureaucrat object as a constant reference, named executor.
+This Bureaucrat is the person attempting to execute the form.*/
 void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 	try {
 		if (!this->getIsSigned())

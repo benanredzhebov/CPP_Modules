@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 12:59:21 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/17 13:40:25 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/19 08:54:44 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./Form.hpp"
 
 Form::Form() : _name("Default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {
-	std::cout << "Dflt constructor called." << getName() << " Form with sign grade " \
+	std::cout << "Form dflt constructor called." << getName() << " Form with sign grade " \
 		<< getGradeToSign() << " and execution grade " << getGradeToExecute() << " is printid." << std::endl;
 }
 
 Form::Form(std::string name, int gradeToSign, int gradeToExecute) : _name(name), _isSigned(false),
 	_gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {
-		std::cout << "Form parametrized constructor called." << std::endl;
+		std::cout << "Form parameterized constructor called." << std::endl;
 		try {
 			if (gradeToSign > 150 || gradeToExecute > 150)
 				throw Form::GradeTooLowException();

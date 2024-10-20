@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:52:41 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/17 09:18:34 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/19 09:07:02 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat() : _name("Defaulf name"), _grade(150) {
 }
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade) {
-	std::cout << "Bureaucrat constructor with name called" << std::endl;
+	std::cout << "Bureaucrat parameterized constructor called" << std::endl;
 	try {
 		if (grade < 1)
 			throw GradeTooHighException();

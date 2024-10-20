@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 14:09:06 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/18 10:49:58 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/20 07:49:42 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ class ShrubberyCreationForm : public AForm {
 		ShrubberyCreationForm(const ShrubberyCreationForm &other);
 		virtual ~ShrubberyCreationForm(); // Prevents resource leaks and undefined behavior when dealing with polymorphic objects.
 
-		ShrubberyCreationForm		&operator=(const ShrubberyCreationForm &other);
+		ShrubberyCreationForm	&operator=(const ShrubberyCreationForm &other);
+		
 		std::string		getTarget() const;
-
 		virtual void	execute(Bureaucrat const &executor) const;
-		void	executeForm() const;
+		void			executeForm() const;
 		
 };
 
