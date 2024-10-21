@@ -6,7 +6,7 @@
 #    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/15 14:23:46 by beredzhe          #+#    #+#              #
-#    Updated: 2024/10/15 14:45:04 by beredzhe         ###   ########.fr        #
+#    Updated: 2024/10/21 10:24:58 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,7 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+	rm -rf home_ShrubberyCreationForm
 
 re: fclean all
 

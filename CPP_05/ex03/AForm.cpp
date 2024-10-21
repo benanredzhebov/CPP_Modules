@@ -6,14 +6,14 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 12:59:21 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/17 14:04:49 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:38:23 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./AForm.hpp"
 
 AForm::AForm() : _name("Default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {
-	std::cout << "Dflt constructor called." << getName() << " Form with sign grade " \
+	std::cout << "Dflt constructor called." << getName() << " with sign grade " \
 		<< getGradeToSign() << " and execution grade " << getGradeToExecute() << " is printid." << std::endl;
 }
 
@@ -26,7 +26,7 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name
 			else if (gradeToSign < 1 || gradeToExecute < 1)
 				throw AForm::GradeTooHighException();
 			else {
-				std::cout << getName() << " Form with sign grade " \
+				std::cout << getName() << " with sign grade " \
 					<< getGradeToSign() << " and execution grade " << getGradeToExecute() << " is printed." << std::endl;
 			}
 		}
@@ -37,7 +37,7 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute) : _name(name
 
 AForm::AForm(const AForm &other) : _name(other._name), _isSigned(other._isSigned), \
 	_gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {
-		std::cout << "Form Copy constructor called." << getName() << " Form  with sign grade " \
+		std::cout << "Form Copy constructor called." << getName() << " with sign grade " \
 				<< getGradeToSign() << " and execution grade " << getGradeToExecute() << " is photocopied" << std::endl;
 	}
 	

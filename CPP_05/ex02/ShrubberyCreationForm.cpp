@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
+/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 14:24:35 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/20 08:40:49 by benanredzhe      ###   ########.fr       */
+/*   Updated: 2024/10/21 10:39:54 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {
 	std::cout << "ShrubberyCreationForm copy assignment operator called" << std::endl;
 	if (this != &other){
-		AForm::operator=(other);
 		_target = other._target;
+        AForm::operator=(other);
+        // setIsSigned(other.getIsSigned());
 	}	
 	return *this;
 }

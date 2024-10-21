@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 09:12:09 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/18 11:34:57 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:14:47 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ RobotomyRequestForm::~RobotomyRequestForm() {
 	std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
+std::string	RobotomyRequestForm::getTarget() const {
+	return _target;
+}
+
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &other) {
 	if (this != &other) {
 		AForm::operator=(other);
@@ -36,17 +40,15 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &o
 	return *this;
 }
 
-std::string	RobotomyRequestForm::getTarget() const {
-	return _target;
-}
-
 void		RobotomyRequestForm::executeForm() const {
 	std::cout << "pffsss...Drggg...\n";
 	std::cout << getTarget() << " has been robotomized.\n";
 }
 
+/* Simulates a robotomy procedure, which has 50% chance of success.
+If robotomy fails , the badLuck exceprion can be thrown to signal this.*/
 void	RobotomyRequestForm::execute(Bureaucrat const &executor) const {
-	time_t t;
+	time_t t; // is used to hold the current time.
 	try {
 		if (!this->getIsSigned())
 			throw(AForm::FormNotSignedException());

@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 10:05:50 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/18 11:07:01 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/21 10:26:25 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ PresidentialPardonForm::~PresidentialPardonForm() {
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &other) {
 	if (this != &other){
-		AForm::operator=(other);
+		// AForm::operator=(other);
 		_target = other._target;
+		AForm::operator=(other);
 	}
 	return *this;
 }

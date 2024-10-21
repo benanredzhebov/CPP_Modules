@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 12:59:21 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/18 10:46:19 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/21 09:26:25 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ class AForm {
 
 		const std::string	&getName() const;
 		bool				getIsSigned() const;
+		// void				setIsSigned(bool sign);
 		int					getGradeToSign() const;
 		int					getGradeToExecute() const;
 
