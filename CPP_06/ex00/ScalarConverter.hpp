@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
+/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:31:35 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/21 17:50:39 by benanredzhe      ###   ########.fr       */
+/*   Updated: 2024/10/23 13:28:34 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,13 @@ class ScalarConverter {
 		static void convert(const std::string& literal);
 	
 	private:
-		ScalarConverter() {};                          //Private constructor to prevent instantiation
+		ScalarConverter();                          //Private constructor to prevent instantiation
 		ScalarConverter(const ScalarConverter &other); //Private constructor to prevent copy
-		~ScalarConverter() {};                         //Private constructor to prevent instantiation
+		~ScalarConverter();                         //Private constructor to prevent instantiation
 
-		ScalarConverter &operator=(const ScalarConverter &other) {}; // Private copy assignment operator to prevent copying
+		ScalarConverter &operator=(const ScalarConverter &other); // Private copy assignment operator to prevent copying
 		
+		// static bool isValidNumber(const std::string& str);
 };
 
 #endif

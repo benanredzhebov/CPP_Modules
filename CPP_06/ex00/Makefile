@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+         #
+#    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/21 17:23:28 by benanredzhe       #+#    #+#              #
-#    Updated: 2024/10/21 17:30:57 by benanredzhe      ###   ########.fr        #
+#    Updated: 2024/10/23 13:54:08 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRC		=	$(shell find . -name '*.cpp')
 OBJ		=	$(SRC:.cpp=.o)
 
 CC		=	c++
-CFLAGS	=	-Wall -Wextra -Werror -std=c+98
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
@@ -29,7 +29,7 @@ $(NAME): $(OBJ)
 clean:
 	rm -rf $(OBJ)
 
-fclean:
+fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
