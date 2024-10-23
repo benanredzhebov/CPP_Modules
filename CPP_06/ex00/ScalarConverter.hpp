@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:31:35 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/23 13:28:34 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:25:18 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <iomanip>
-#include <limits>
-#include <cstdlib>
+#include <iomanip> //manupulating the format of input and output
+#include <limits> // min max
+#include <cstdlib> //atoi atof
 #include <cmath>
 
 class ScalarConverter {
