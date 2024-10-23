@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:40:12 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/23 14:48:39 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/23 22:06:36 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,14 @@ int	main() {
 
 	// Serialize the Data object
 	uintptr_t raw = Serializer::serialize(&originalData);
-
+	std::cout << raw << std::endl;
 	// Deserialize the raw value back to a Data pointer
 	Data* deserializedData = Serializer::deserialize(raw);
-
+	std::cout << deserializedData->id << std::endl;
+	std::cout << &originalData.id << std::endl;
+	std::cout << &originalData.name << std::endl;
+	std::cout << &originalData.value << std::endl;
+	
 	// Ensure the deserialized pointer copmares equal to the original pointer
 	if (deserializedData == &originalData) {
 		std::cout << "Serialization and deserialization successful!" << std::endl;

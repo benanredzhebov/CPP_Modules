@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
+#    By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/23 14:14:14 by beredzhe          #+#    #+#              #
-#    Updated: 2024/10/23 14:49:25 by beredzhe         ###   ########.fr        #
+#    Updated: 2024/10/23 22:03:44 by benanredzhe      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,6 @@ clean:
 fclean: clean
 	rm -rf $(NAME)
 
-re: fcleam
+re: fclean all
 
 .PHONY: all clean fclean re

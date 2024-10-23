@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 14:19:38 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/23 14:28:18 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/23 21:39:01 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <cstdint> //for uintptr_t
 
-class Data; // Forward declaration of Data class
+struct Data; // Forward declaration of Data class
 
 class Serializer {
 	public:
