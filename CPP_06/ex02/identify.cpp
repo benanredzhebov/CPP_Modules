@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 09:52:33 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/26 10:38:07 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/27 18:22:39 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 void identify(Base* p) {
 	if (dynamic_cast<A*>(p)) {
-		std::cout << "Pointer of type: A" << std::endl;
+		std::cout << "/"<< p << "/" << "Pointer of type: A" << std::endl;
 	}
 	else if (dynamic_cast<B*>(p)) {
-		std::cout << "Pointer of type: B" << std::endl;
+		std::cout << "/" << p << "/" << "Pointer of type: B" << std::endl;
 	}
 	else if (dynamic_cast<C*>(p)) {
-		std::cout << "Pointer of type: C" << std::endl;
+		std::cout << "/" << p << "/" << "Pointer of type: C" << std::endl;
 	}
 	else {
 		std::cout << "Unknown type" << std::endl;

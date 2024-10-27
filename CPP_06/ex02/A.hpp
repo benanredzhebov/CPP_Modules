@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 09:38:30 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/26 10:10:14 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/27 18:03:39 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include "Base.hpp"
 
-class A : public Base {
-};
+class A : public Base {};
 
 #endif

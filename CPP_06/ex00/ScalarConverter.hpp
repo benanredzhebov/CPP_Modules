@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:31:35 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/23 14:25:18 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/27 15:53:50 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class ScalarConverter {
 		static void convert(const std::string& literal);
 	
 	private:
-		ScalarConverter();                          //Private constructor to prevent instantiation
+		ScalarConverter();                             //Private constructor to prevent instantiation
 		ScalarConverter(const ScalarConverter &other); //Private constructor to prevent copy
-		~ScalarConverter();                         //Private constructor to prevent instantiation
+		~ScalarConverter();                            //Private constructor to prevent instantiation
 
 		ScalarConverter &operator=(const ScalarConverter &other); // Private copy assignment operator to prevent copying
 		
