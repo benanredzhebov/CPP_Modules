@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 09:52:33 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/27 18:22:39 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/27 18:26:48 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ void identify(Base& p) {
 	bool	identified = false;
 	try {
 		(void)dynamic_cast<A&>(p);
-		std::cout << "Reference of type: A" << std::endl;
+		std::cout << "/"<< &p << "/" "Reference of type: A" << std::endl;
 		identified = true;
 	} catch (...) {}
 	if (!identified) {
 		try {
 			(void)dynamic_cast<B&>(p);
-			std::cout << "Reference of type: B" << std::endl;
+			std::cout << "/"<< &p << "/" "Reference of type: B" << std::endl;
 			identified = true;
 		} catch (...) {}
 	}
@@ -48,7 +48,7 @@ void identify(Base& p) {
 	if (!identified) {
 		try {
 			(void)dynamic_cast<C&>(p);
-			std::cout << "Reference of type: C" << std::endl;
+			std::cout << "/"<< &p << "/" "Reference of type: C" << std::endl;
 			identified = true;
 		} catch (...){}
 	}
