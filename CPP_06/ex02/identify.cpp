@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 09:52:33 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/27 18:26:48 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/28 09:09:49 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "B.hpp"
 #include "C.hpp"
 
+/*identify if the object belongs to the derived types A,B,C
+using dynamic_cast.*/
 void identify(Base* p) {
 	if (dynamic_cast<A*>(p)) {
 		std::cout << "/"<< p << "/" << "Pointer of type: A" << std::endl;

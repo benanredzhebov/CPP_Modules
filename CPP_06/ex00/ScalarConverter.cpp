@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 17:43:16 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/27 16:24:49 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/28 13:39:11 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void ScalarConverter::convert(const std::string& literal) {
 		}
 		/*If i is within the valid range for a char, the program checks if the character is printable using isprint().*/
 		else if (!isprint(static_cast<char>(i))) {
-			std::cout << "char: Non displayable" << std::endl;
+			std::cout << "char: non displayable" << std::endl;
 		}
 		/*Printing tha valid character*/
 		else {
@@ -90,9 +90,9 @@ void ScalarConverter::convert(const std::string& literal) {
 		std::cout << "int: " << i << std::endl;
 
 		// Convert to float
-		std::cout << "float: " << std::fixed << std::setprecision(1) << f << "f" << std::endl;
+		std::cout << "float: " << std::scientific << std::setprecision(5) << f << ".0f" << std::endl;
 
 		// Convert to double
-		std::cout << "double: " << std::fixed << std::setprecision(1) << d << std::endl;
+		std::cout << "double: " << std::scientific << std::setprecision(5) << d << ".0" << std::endl;
 	}
 }
