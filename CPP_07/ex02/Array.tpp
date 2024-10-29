@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 09:09:19 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/29 09:58:12 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:45:18 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,38 +17,38 @@
 
 template <typename T>
 
-Array<T>::Array() : _elements(NULL), _length(0) {
+Array<T>::Array() : _array(NULL), _length(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
 template <typename T>
-Array<T>::Array(unsigned int n) : _elements(new T[n]), _length(n) {
+Array<T>::Array(unsigned int n) : _array(new T[n]), _length(n) {
 	std::cout << "Parameterized constructor called" << std::endl;
 }
 
 template <typename T>
-Array<T>::Array(const Array &other) : _elements(new T[other._length]), _length(other._length) {
+Array<T>::Array(const Array &other) : _array(new T[other._length]), _length(other._length) {
 	std::cout << "Copy constructor called" << std::endl;
-	for (unsigned int i = 0; i < this->_length; ++i) {
-		this->_elements[i] = other._elements[i];
+	for (unsigned int i = 0; i < this->_length; i++) {
+		this->_array[i] = other._array[i];
 	}
 }
 
 template <typename T>
 Array<T>::~Array() {
 	std::cout << "Default destructor called" << std::endl;
-	delete[] _elements;
+	delete[] _array;
 }
 
 template <typename T>
 Array<T>& Array<T>::operator=(const Array &other) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (*this != other) {
-		delete[] this->_elements;
-		this->_length = other.length;
-		this->_elements = new T[_length];
-		for (unsigned int i = 0; i < this->_length; ++i) {
-			this->_elements[i] = other._elements[i];
+	if (this != &other) {
+		delete[] _array;
+		this->_length = other.size();
+		this->_array = new T[_length];
+		for (unsigned int i = 0; i < _length; ++i) {
+			this->_array[i] = other._array[i];
 		}
 	}
 	return *this;
@@ -57,15 +57,8 @@ Array<T>& Array<T>::operator=(const Array &other) {
 template <typename T>
 T& Array<T>::operator[](unsigned int index) {
 	if (index >= this->_length)
-		throw std::out_of_range("Index out of bounds");
-	return this->_elements[index];
-}
-
-template <typename T>
-const T& Array<T>::operator[](unsigned int index) const {
-	if (index >= this->_length)
-		throw std::out_of_range("Index out of bounds");
-	return this->_elements[index];
+		throw OutOfRangeException();
+	return this->_array[index];
 }
 
 template <typename T>
@@ -75,14 +68,15 @@ unsigned int Array<T>::size() const {
 
 template <typename T>
 void Array<T>::print() {
-	for (unsigned int i = 0; i < this->_length; i++) {
-		std::cout << this->_elements[i] << " ";
+	for (unsigned int i = 0; i < _length; i++) {
+		std::cout << _array[i] << " ";
 	}
 	std::cout << std::endl;
 }
 
 template <typename T>
-const char *Array<T>::OutOfRangeException::what() const throw() {
+const char *Array<T>::OutOfRangeException::what() const throw()
+{
 	return ("Index out of range");
 }
 

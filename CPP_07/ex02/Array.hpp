@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 08:55:22 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/29 09:53:37 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:45:23 by benanredzhe      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 template <typename T>
 class Array {
 	private:
-	T*				_elements;
+	T*				_array;
 	unsigned int	_length;
 
 	public:
@@ -30,7 +30,6 @@ class Array {
 		
 		Array& operator=(const Array &other);
 		T& operator[](unsigned int index);
-		const T& operator[](unsigned int index) const;
 
 		unsigned int	size() const;
 		void			print(void);
