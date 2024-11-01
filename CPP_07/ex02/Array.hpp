@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
+/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 08:55:22 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/29 21:45:23 by benanredzhe      ###   ########.fr       */
+/*   Updated: 2024/11/01 09:24:04 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ class Array {
 		~Array();
 		
 		Array& operator=(const Array &other);
-		T& operator[](unsigned int index);
+		T& operator[](unsigned int index); // Allow access to elements of the array  using the subscript operator[]
 
-		unsigned int	size() const;
-		void			print(void);
+		unsigned int	size() const; // Returns the number of elements in the array
+		void			print(void); // Prints the elements of the array
 		
 		class OutOfRangeException : public std::exception{
 			public:
@@ -40,6 +40,6 @@ class Array {
 		};
 };
 
-#include "./Array.tpp"
+#include "./Array.tpp" // By including the .tpp file at the end of the header file, you ensure that the definitions are available wherever the header is included.
 
 #endif

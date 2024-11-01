@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 14:10:41 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/28 14:43:50 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/11/01 08:11:43 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define WHATEVER_HPP
 
 template <typename T>
-
 void	swap(T &a, T &b) {
 	T temp = a;
 	a = b;

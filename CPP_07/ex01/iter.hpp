@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
+/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 21:44:02 by benanredzhe       #+#    #+#             */
-/*   Updated: 2024/10/28 22:17:01 by benanredzhe      ###   ########.fr       */
+/*   Updated: 2024/11/01 08:19:35 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ template <typename T>
 void	print(const T &x) {
 	std::cout << x << " ";
 }
-
 
 #endif
