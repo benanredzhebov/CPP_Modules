@@ -6,7 +6,7 @@
 int main(void)
 {
 	{
-		// Test 1: Default constructor
+	// 	// Test 1: Default constructor
 		std::cout <<"Test 1" << std::endl;
 		Array<int> emptyArray;
 		std::cout << "Size of emptyArray: " << emptyArray.size() << std::endl;
@@ -51,7 +51,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
-	// Test 5: Assignment operator
+	//Test 5: Assignment operator
 	std::cout <<"Test 5" << std::endl;
 	try 
 	{
@@ -63,54 +63,3 @@ int main(void)
 	}
 	std::cout << std::endl << std::endl;
 }
-// int main(int, char**)
-// {
-//     Array<int> numbers(MAX_VAL);
-//     int* mirror = new int[MAX_VAL];
-//     srand(time(NULL)); // Generate 750 random numbers
-//     for (int i = 0; i < MAX_VAL; i++)
-//     {
-//         const int value = rand();
-//         numbers[i] = value;
-//         mirror[i] = value;
-//     }
-//     //SCOPE
-//     {
-//         Array<int> tmp = numbers;
-//         Array<int> test(tmp);
-//     }
-
-//     for (int i = 0; i < MAX_VAL; i++)
-//     {
-//         if (mirror[i] != numbers[i])
-//         {
-//             std::cerr << "didn't save the same value!!" << std::endl;
-//             return 1;
-//         }
-//     }
-//     try
-//     {
-//         numbers[-2] = 0;
-// 		// numbers[0] = 0;
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << '\n';
-//     }
-//     try
-//     {
-//         numbers[MAX_VAL] = 0;
-// 		// numbers[749] = 0;
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << '\n';
-//     }
-
-//     for (int i = 0; i < MAX_VAL; i++)
-//     {
-//         numbers[i] = rand();
-//     }
-//     delete [] mirror;//
-//     return 0;
-// }

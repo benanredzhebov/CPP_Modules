@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benanredzhebov <benanredzhebov@student.    +#+  +:+       +#+        */
+/*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 09:09:19 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/10/29 21:45:18 by benanredzhe      ###   ########.fr       */
+/*   Updated: 2024/11/03 08:19:59 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,18 @@
 template <typename T>
 
 Array<T>::Array() : _array(NULL), _length(0) {
+	for (unsigned int i = 0; i < _length; ++i) {
+		_array[i] = T(); // Initialize each element to the default value of T
+	}
 	std::cout << "Default constructor called" << std::endl;
 }
 
 template <typename T>
 Array<T>::Array(unsigned int n) : _array(new T[n]), _length(n) {
 	std::cout << "Parameterized constructor called" << std::endl;
+	for (unsigned int i = 0; i < _length; ++i) {
+		_array[i] = T();
+	}
 }
 
 template <typename T>
