@@ -6,7 +6,7 @@
 #    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/05 13:20:42 by beredzhe          #+#    #+#              #
-#    Updated: 2024/11/06 10:17:02 by beredzhe         ###   ########.fr        #
+#    Updated: 2024/11/08 08:49:08 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ $(NAME): $(OBJ)
 clean:
 	rm -rf $(OBJ)
 
-fclean:
+fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
