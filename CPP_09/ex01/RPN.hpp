@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RPN.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 10:47:16 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/11/11 14:05:57 by beredzhe         ###   ########.fr       */
+/*   Created: 2024/11/12 13:32:15 by beredzhe          #+#    #+#             */
+/*   Updated: 2024/11/12 14:00:07 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./BitcoinExchange.hpp"
+#ifndef RPN_HPP
+#define RPN_HPP
 
-int main(int argc, char **argv) {
-	if (argc != 2) {
-		std::cerr << "Usage: " << argv[0] << "input_file" << std::endl;
-		return 1;
-	}
+#include <iostream>
+#include <stack>
+#include <string>
+#include <sstream>
 
-	BitcoinExchange btc;
-	if (!btc.loadDatabase(argv[1])) {
-		return 1;
-	}
+class Rpn {
+	private:
+		bool isOperator(const std::string &token);
+		int applyOperator(const std::string &op, int a, int b);
+		
+	public:
+		Rpn();
+		Rpn(const Rpn &other);
+		~Rpn();
+
+		Rpn &operator=(const Rpn &other);
+
+		int	evaluate(const std:: string &expression);
 	
-	btc.processInput(argv[2]);
-	return 0;
-}
+};
+
+#endif

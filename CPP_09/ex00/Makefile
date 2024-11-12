@@ -15,8 +15,6 @@ $(NAME): $(OBJ)
 %.o:%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
-all: $(NAME)
-
 clean: 
 	rm -rf $(OBJ)
 

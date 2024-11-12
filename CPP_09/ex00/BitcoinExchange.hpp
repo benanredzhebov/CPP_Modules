@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:00:49 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/11/11 14:29:38 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/11/12 13:15:04 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 #include <fstream>
 #include <sstream>
 #include <cstdlib>
+#include <iomanip>
+#include <cmath>
 
 class BitcoinExchange {
 	private:
