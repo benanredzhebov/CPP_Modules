@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:17:57 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/11/12 13:25:01 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:45:20 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 BitcoinExchange::BitcoinExchange() {}
 
-BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) : _exchangeRates(other._exchangeRates) {}
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) : _exchangeRates(other._exchangeRates) {
+}
 
 BitcoinExchange::~BitcoinExchange() {}
 
@@ -25,21 +26,23 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange &other) {
 	return *this;
 }
 
+/*Load data from a CSV file.*/
 bool BitcoinExchange::loadDatabase(const std::string& filename) {
-	std::ifstream file(filename.c_str());
+	std::ifstream file(filename.c_str()); // is using for reading the data from files.
 	if (!file.is_open()) {
 		std::cerr << "Error: could not open file." << std::endl;
 		return false;
 	}
 
 	std::string	line;
-	//Reads the file line by line
+	//Reads the file line by line. Extracts the date and exchange rate
 	while (std::getline(file, line)) {
-		std::istringstream ss(line);
+		std::istringstream ss(line); // Create an input string stream object initialized with the current line
 		std::string date;
 		float rate;
-		if (std::getline(ss, date, ',') && ss >> rate) {
-			_exchangeRates[date] = rate;
+		/*Reads the date from the stream and stores it in the date variable. It stops reading when it encounters the comma (',').*/
+		if (std::getline(ss, date, ',') && ss >> rate) { //ss >> rate reads the float value from the remaining part of the string into rate
+			_exchangeRates[date] = rate; // Store the date and rate in the map
 		}
 	}
 
@@ -47,6 +50,7 @@ bool BitcoinExchange::loadDatabase(const std::string& filename) {
 	return true;
 }
 
+/* Processes an input file containing date-value pairs. It performs several validations*/
 void BitcoinExchange::processInput(const std::string& filename) {
 	std::ifstream file(filename.c_str());
 	if (!file.is_open()) {
@@ -73,7 +77,7 @@ void BitcoinExchange::processInput(const std::string& filename) {
 	std::getline(file, line); //first line
 
 	while (std::getline(file, line)) {
-		std::istringstream ss(line);
+		std::istringstream ss(line); // allowing easy extraction of the date and value
 		std::string date, valueStr;
 
 		// Split line by '|'
@@ -143,7 +147,10 @@ bool BitcoinExchange::_isValidDate(const std::string& date) {
 	if ((month == 4 || month == 6 || month == 9 || month == 11) && day > 30) {
 		return false;
 	}
-	// Check for valid days in February, considering leap years
+	/*Check for valid days in February, considering leap years
+	If the year is divisible by 4: It could be a leap year.
+	If the year is also divisible by 100: It is not a leap year (century years like 1900 are not leap years).
+	If the year is divisible by 400: It is a leap year (e.g., 2000 is a leap year, but 1900 is not).*/ 
 	if (month == 2) {
 		bool isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 		if (day > 29 || (day == 29 && !isLeap)) {
@@ -171,6 +178,7 @@ bool BitcoinExchange::_isValidValue(const std::string& value) {
 	return true;
 }
 
+/*first date that is equal to or later than the provided date*/
 std::string BitcoinExchange::_getClosestDate(const std::string& date) {
 	std::map<std::string, float>::iterator it = _exchangeRates.lower_bound(date);
 	if (it == _exchangeRates.end() || it->first != date) {

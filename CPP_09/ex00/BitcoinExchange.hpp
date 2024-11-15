@@ -6,7 +6,7 @@
 /*   By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:00:49 by beredzhe          #+#    #+#             */
-/*   Updated: 2024/11/12 13:15:04 by beredzhe         ###   ########.fr       */
+/*   Updated: 2024/11/14 13:49:59 by beredzhe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 class BitcoinExchange {
 	private:
-		std::map<std::string, float>	_exchangeRates;
+		std::map<std::string, float>	_exchangeRates; //his container is used to store the exchange rates with the date as the key and the rate as the value. It is referenced as _exchangeRates.
 
 		bool							_isValidDate(const std::string& date);
 		bool							_isValidValue(const std::string& value);
@@ -42,3 +42,6 @@ class BitcoinExchange {
 };
 
 #endif
+
+
+/*std::map elements are sorted by their keys in ascending order by default. This makes maps useful for ordered data retrieval.*/

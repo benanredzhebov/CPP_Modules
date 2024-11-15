@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: beredzhe <beredzhe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/11/12 13:26:48 by beredzhe          #+#    #+#              #
-#    Updated: 2024/11/13 09:23:03 by beredzhe         ###   ########.fr        #
+#    Created: 2024/11/13 09:48:45 by beredzhe          #+#    #+#              #
+#    Updated: 2024/11/14 10:48:18 by beredzhe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	RPN
+NAME	=	PmergeMe
 
-SRC		=	$(shell find . -name '*cpp')
+SRC		=	$(shell find . -name '*.cpp')
 OBJ		=	$(SRC:.cpp=.o)
 
 CC		=	c++
