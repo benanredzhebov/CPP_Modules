@@ -3,25 +3,22 @@
 
 #include <iostream>
 
-class Warlock {
-	private:
-		std::string	name;
-		std::string	title;
+class Warlock
+{
+private:
+	Warlock();
+	Warlock(const Warlock &);
+	Warlock &operator=(const Warlock &);
+	std::string _name;
+	std::string _title;
 
-		Warlock();
-		Warlock(const Warlock &);
-		Warlock &operator=(const Warlock &);
-	public:
-		Warlock(std::string _name, std::string _title);
-		~Warlock();
-
-		std::string	getName() const;
-
-		std::string	getTitle() const;
-
-		void		setTitle(const std::string &newTitle);
-
-		void		introduce() const;
+public:
+	Warlock(const std::string &name, const std::string &title);
+	~Warlock();
+	std::string getName() const;
+	std::string getTitle() const;
+	void setTitle(const std::string &newTitle);
+	void introduce() const;
 };
 
 #endif
