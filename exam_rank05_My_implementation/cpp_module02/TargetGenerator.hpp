@@ -2,6 +2,7 @@
 #define TARGETGENERATOR_HPP
 
 #include "ATarget.hpp"
+#include "BrickWall.hpp"
 #include <map>
 
 class TargetGenerator

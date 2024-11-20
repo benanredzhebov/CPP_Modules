@@ -28,5 +28,5 @@ void TargetGenerator::forgetTargetType(std::string const &target) {
 ATarget *TargetGenerator::createTarget(std::string const &target) {
 	if (book.find(target) != book.end())
 		return book[target];
-	return NULL;
+	return new BrickWall(target);
 }
